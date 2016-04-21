@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="antlr-2.7.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/antlr-2.7.6.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-beanutils-1.8.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-fileupload-1.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-io-1.3.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-lang-2.5.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-lang3-3.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/dom4j-1.6.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/gson-2.2.4.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/hibernate-jpa-2.0-api-1.0.0.Final.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/hibernate3.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/jackson-core-2.2.4.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/jackson.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/javassist-3.7.ga.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/jstl.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/jta-1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/slf4j-nop-1.6.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

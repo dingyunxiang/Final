@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.CyryEntity" table="cyry" schema="people">
+        <id name="id">
+            <column name="id" sql-type="varchar(255)"/>
+        </id>
+        <property name="street">
+            <column name="street" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="birth">
+            <column name="birth" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="card">
+            <column name="card" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="ispeo">
+            <column name="ispeo" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="worktime">
+            <column name="worktime" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="layofftime">
+            <column name="layofftime" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="basicworkunit">
+            <column name="basicworkunit" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="identity">
+            <column name="identity" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="education">
+            <column name="education" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="skill">
+            <column name="skill" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="unitnature">
+            <column name="unitnature" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="skilllevel">
+            <column name="skilllevel" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="isworking">
+            <column name="isworking" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="monthsalary">
+            <column name="monthsalary" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="dependent">
+            <column name="dependent" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="post">
+            <column name="post" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="iscontract">
+            <column name="iscontract" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="contractstarttime">
+            <column name="contractstarttime" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="constractendtime">
+            <column name="constractendtime" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="engageproject">
+            <column name="engageproject" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="engageplace">
+            <column name="engageplace" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="ishavinglicense">
+            <column name="ishavinglicense" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="workinputplace">
+            <column name="workinputplace" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="job">
+            <column name="job" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="freejobtype">
+            <column name="freejobtype" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="health">
+            <column name="health" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="isenjoybenefit">
+            <column name="isenjoybenefit" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="isenjoyunemployee">
+            <column name="isenjoyunemployee" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="elsehaha">
+            <column name="elsehaha" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="monthenjoysalary">
+            <column name="monthenjoysalary" sql-type="decimal(10)" precision="10" not-null="true"/>
+        </property>
+        <property name="ismanageput">
+            <column name="ismanageput" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="isreceivereemployee">
+            <column name="isreceivereemployee" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="reemployeeid">
+            <column name="reemployeeid" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="isenjoyloan">
+            <column name="isenjoyloan" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="loannumber">
+            <column name="loannumber" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="whichtrain">
+            <column name="whichtrain" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="whichtrain1">
+            <column name="whichtrain1" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="whichtrain2">
+            <column name="whichtrain2" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="jobwanting">
+            <column name="jobwanting" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="manpowermacket">
+            <column name="manpowermacket" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="isotherprovice">
+            <column name="isotherprovice" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="contactman">
+            <column name="contactman" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="locatecounty">
+            <column name="locatecounty" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="loactecommunity">
+            <column name="loactecommunity" sql-type="varchar(255)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
