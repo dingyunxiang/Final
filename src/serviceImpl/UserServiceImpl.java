@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.UserService;
 
+import java.util.List;
+
 /**
  * Created by dingyunxiang on 16/4/17.
  */
@@ -27,5 +29,26 @@ class UserServiceImpl implements UserService {
             }
         }
         return false;
+    }
+
+
+    @Override
+    public void addUser(UserEntity user) {
+        userDao.save(user);
+    }
+
+    @Override
+    public void updateUser(UserEntity user) {
+        userDao.update(user);
+    }
+
+    @Override
+    public void delUser(UserEntity user) {
+        userDao.delete(UserEntity.class,user.getId());
+    }
+
+    @Override
+    public List<UserEntity> getAllUser() {
+        return userDao.getAll(UserEntity.class);
     }
 }

@@ -13,8 +13,6 @@ $(function () {
             //console.log(account + password);
 
             $.ajax({
-                //async : true,
-                //cache : false,
                 type : 'POST',
                 dataType:"json",
                 data:data1,

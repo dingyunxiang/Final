@@ -5,8 +5,6 @@ import entity.JiedaoEntity;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.List;
-
 /**
  * Created by dingyunxiang on 16/4/16.
  */
@@ -38,10 +36,9 @@ public class JIedaoDaoTest {
         BeanFactory factory = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         JiedaoDao service  = (JiedaoDao) factory.getBean("jiedaoDao");
-        List<JiedaoEntity> a = service.getAll(JiedaoEntity.class);
-        for(JiedaoEntity b:a){
-            System.out.println(b.getStreet());
-        }
+        JiedaoEntity jiedao = new JiedaoEntity();
+        jiedao.setStreet("1");
+        service.save(jiedao);
     }
 
 }

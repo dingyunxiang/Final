@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Transdmin Light</title>
+<title>人事管理系统</title>
 
 <!-- CSS -->
 <link href="${pageContext.request.contextPath}/style/css/transdmin.css" rel="stylesheet" type="text/css" media="screen" />
@@ -13,6 +13,7 @@
 <!-- JavaScripts-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/style/js/jquery.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/style/js/jNice.js"></script>
+
 </head>
 
 <body>
@@ -35,10 +36,10 @@
 			<div id="container">
         		<div id="sidebar">
                         <ul class="sideNav">
-                            <li><a href="#">用户总览</a></li>
-                            <li><a href="#" class="active">用户删除</a></li>
-                            <li><a href="#">用户修改</a></li>
-                            <li><a href="#">添加新用户</a></li>
+                            <li><a href="#" id="allUser" class="user">用户总览</a></li>
+                            <li><a href="#"  id="del" class="user">用户删除</a></li>
+                            <li><a href="#"  class="user">用户修改</a></li>
+                            <li><a href="#" id="add" class="user">添加新用户</a></li>
                         </ul>
                         <!-- // .sideNav -->
                     </div><!-- // .sideNav -->
@@ -99,7 +100,7 @@
                 <div class="clear"></div>
             </div>
             <!-- // #container -->
-        </div>	
+        <<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>/div>
         <!-- // #containerHolder -->
         
         <p id="footer">Feel free to use and customize it. <a href="http://www.perspectived.com">Credit is appreciated.</a></p>
@@ -129,7 +130,28 @@
             $(this).addClass("active");
             return false;
         })
+
+        $("#allUser").click(function(){
+            $("#main").load("allUser.jsp");
+            $(".user").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        })
+        $("#del").click(function(){
+            $("#main").load("aa.jsp");
+            $(".user").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        })
+        $("#add").click(function(){
+            $("#main").load("addUser.jsp");
+            $(".user").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        })
     </script>
+
     <!-- // #wrapper -->
+
 </body>
 </html>
