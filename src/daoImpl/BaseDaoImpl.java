@@ -29,7 +29,6 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
         @Override
         public void save(T t) {
             this.getSession().save(t);
-            System.out.println(t);
         }
 
         @Override
@@ -39,14 +38,12 @@ public class BaseDaoImpl<T>  implements BaseDao<T> {
 
         @Override
         public void delete(Class<T> clazz, Serializable id) {
-            // TODO Auto-generated method stub
             this.getSession().delete(this.getEntityById(clazz, id));
         }
 
         @SuppressWarnings("unchecked")
         @Override
         public T getEntityById(Class<T> clazz, Serializable id) {
-            // TODO Auto-generated method stub
             return (T) this.getSession().get(clazz, id);
         }
 

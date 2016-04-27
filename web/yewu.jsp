@@ -3,12 +3,32 @@
 
 <div id="sidebar">
     <ul class="sideNav">
-        <li><a href="#" >数据录入</a></li>
-        <li><a href="#" class="active">记录修改</a></li>
-        <li><a href="#" >记录删除</a></li>
-        <li><a href="#" >复合删除</a></li>
-        <li><a href="#" >记录浏览</a></li>
+        <li><a href="#"  class="yewu" id="addshuju">数据录入</a></li>
+        <li><a href="#" class="yewu" id="fuheshanchu">复杂删除</a></li>
+        <li><a href="#" class="yewu" id="allshuju" >记录浏览</a></li>
     </ul>
     <!-- // .sideNav -->
+    <script type="text/javascript">
 
+        $("#addshuju").click(function(){
+            $("#main").load("addshuju.jsp");
+            $(".yewu").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        });
+        $("#fuheshanchu").click(function(){
+            $("#main").load("fuheshanchu.jsp");
+            $(".yewu").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        });
+        $("#allshuju").click(function(){
+            $("#main").load("allshuju.jsp");
+            $(".yewu").removeClass("active");
+            $(this).addClass("active");
+            return false;
+        });
+
+
+    </script>
 </div>

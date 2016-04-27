@@ -21,6 +21,7 @@
       <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/slf4j-api-1.6.1.jar!/" />
       <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/slf4j-nop-1.6.1.jar!/" />
       <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/SSH-lib/hibernate3.0/standard.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

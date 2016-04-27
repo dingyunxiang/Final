@@ -164,13 +164,15 @@ public class AdminController {
         }
         return map;
     }
-    //得到所有用户
+
     @ResponseBody
     @RequestMapping("getAllUser.form")
-    public Map<String, Object> getAllUser(HttpServletRequest request){
+    public Map<String, Object> getAllUser(){
         Map<String, Object> map = new HashMap<String, Object>();
+        List<UserEntity> list = null;
         try{
-            List<UserEntity> list = userService.getAllUser();
+             list = userService.getAllUser();
+           // System.out.println(list);
             map.put("result",list);
         }catch (Exception e){
             e.printStackTrace();
@@ -180,7 +182,6 @@ public class AdminController {
     }
 
     //街道模块
-
     @ResponseBody
     @RequestMapping("addJiedao.form")
     public Map<String, Object> addJiedao(HttpServletRequest request, JiedaoEntity jiedao){
