@@ -1,18 +1,10 @@
 package util;
 
 import java.util.List;
-/*
- * ·ÖÒ³ÐÅÏ¢Àà£¬°üº¬·ÖÒ³µÄËùÓÐÐÅÏ¢
- *
- *
- *
- */
 public class PageInfo {
 
-    //ÇëÇóµÄActionÃû£»
     String action;
 
-    //Êý¾Ý
     List list;
 
     //×Ü¼ÇÂ¼Êý
@@ -33,7 +25,6 @@ public class PageInfo {
         this.currentPage = currentPage;
     }
 
-    //Ã¿Ò³¼ÇÂ¼Êý£»
     int pageSize=5;
 
     public String getAction() {

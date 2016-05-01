@@ -51,4 +51,9 @@ class UserServiceImpl implements UserService {
     public List<UserEntity> getAllUser() {
         return userDao.getAll(UserEntity.class);
     }
+
+    @Override
+    public UserEntity getUserById(String id) {
+        return userDao.getEntityById(UserEntity.class,id);
+    }
 }

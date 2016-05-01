@@ -12,11 +12,16 @@
 
         <h3>复合删除</h3>
         <fieldset>
-            <p><label>用户名：</label><input type="text" id="addUser_username" class="text-long addUser_username" /></p>
-            <p><label>密码：</label><input type="text" id="addUser_password" class="text-long addUser_assword" /></p>
-            <p><label>确认密码：</label><input type="text" id="addUser_repassword" class="text-long addUser_password" /></p>
+            <p><label>按社区删除</label><input type="text" id="addUser_username" class="text-long addUser_username" /></p>
             <input id="addUser" type="button" value="确认添加" />
         </fieldset>
+
+        <input id="delAll" value="删除全部数据" type="button">
     </form>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>
+
+<script type="text/javascript">
+
+
+
+</script>

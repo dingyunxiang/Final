@@ -19,4 +19,3 @@
         </fieldset>
     </form>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>

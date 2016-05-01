@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <%--
@@ -20,13 +21,59 @@
                 <th>用户名</th>
                 <th>密码</th>
             </tr>
-             <c:forEach items="${users}" var="user">
+             <c:forEach items="${list}" var="user">
                 <tr>
                     <td>1</td>
-                    <td>${ele.username}</td>
-                    <td>${ele.password}</td>
-                    <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                    <td>${user.username}</td>
+                    <td>${user.password}</td>
+                    <td class="action"><a href="#" class="view" shu="${user.id}">View</a><a href="#" shu="${user.id}" class="edit">Edit</a><a href="#"shu="${user.id}" class="delete">Delete</a></td>
                 </tr>
              </c:forEach>
         </table>
 </div>
+
+<script type="text/javascript">
+    $(".delete").click(function(){
+        var id = $(this).attr("shu");
+        console.log(id);
+        var data1 = {
+            id: id
+        }
+        $.ajax({
+            type : 'POST',
+            dataType:"json",
+            data:data1,
+            url : 'delUser.form',
+            success : function (data) {
+                if(data.result == "success"){
+                    $("#main").load('getAllUser.form');
+                }else{
+                    alert("删除失败");
+                }
+            },
+            error:function(){
+                console.log("Internet Error!");
+            }
+        });
+    });
+
+    $(".view").click(function(){
+        var id = $(this).attr("shu");
+        // console.log(id);
+        var data1 = {
+            id: id
+        }
+        // $("#main").load('getShequ.form',data1);
+
+    });
+
+    $(".edit").click(function(){
+        var id = $(this).attr("shu");
+        // console.log(id);
+        var data1 = {
+            id: id
+        }
+        $("#main").load('getUser.form',data1);
+    });
+
+</script>

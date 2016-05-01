@@ -11,35 +11,13 @@
 
     <script type="text/javascript">
         $("#allShequ").click(function(){
-            $.ajax({
-                type : 'POST',
-                dataType:"json",
-                url : 'getAllShequ.form',
-                success : function (data) {
-                    console.log(data.result);
-                },
-                error:function(){
-                    console.log("Internet Error!");
-                }
-            });
-            $("#main").load("allshequ.jsp");
+            $("#main").load('getAllShequ.form');
             $(".data").removeClass("active");
             $(this).addClass("active");
             return false;
         });
         $("#allXianqu").click(function(){
-            $.ajax({
-                type : 'POST',
-                dataType:"json",
-                url : 'getAllShengshi.form',
-                success : function (data) {
-                    console.log(data.result);
-                },
-                error:function(){
-                    console.log("Internet Error!");
-                }
-            });
-            $("#main").load("allxianqu.jsp");
+            $("#main").load('getAllShengshi.form');
             $(".data").removeClass("active");
             $(this).addClass("active");
             return false;

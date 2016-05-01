@@ -1,13 +1,24 @@
 package controller;
 
 import entity.*;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import service.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,10 +91,10 @@ public class AdminController {
     //删除社区
     @ResponseBody
     @RequestMapping("delShequ.form")
-    public Map<String, Object> delUser(HttpServletRequest request, ShequEntity shequ){
+    public Map<String, Object> delUser(HttpServletRequest request,@RequestParam(value = "id", required = false)  String id){
         Map<String, Object> map = new HashMap<String, Object>();
         try{
-            shequService.delShequ(shequ);
+            shequService.delShequ(id);
             map.put("result","success");
         }catch (Exception e){
             e.printStackTrace();
@@ -105,20 +116,60 @@ public class AdminController {
         }
         return map;
     }
+
+    @RequestMapping("getShequ.form")
+    public String getShequ(@RequestParam(value = "id", required = false) String id, HttpServletRequest request){
+        ShequEntity shequ = shequService.getShequById(id);
+        request.setAttribute("shequ",shequ);
+        return "updateShequ";
+    }
+
     //得到所有社区
-    @ResponseBody
     @RequestMapping("getAllShequ.form")
-    public Map<String, Object> getAllShequ(HttpServletRequest request){
-        Map<String, Object> map = new HashMap<String, Object>();
+    public String getAllShequ(HttpServletRequest request){
+        List<ShequEntity> list = null;
         try{
-            List<ShequEntity> list = shequService.getAll();
-            map.put("result",list);
+            list = shequService.getAll();
         }catch (Exception e){
             e.printStackTrace();
-            map.put("result","fail");
         }
-        return map;
+        request.setAttribute("list", list);
+        return "allshequ";
     }
+    @RequestMapping("uploadShequ.form")
+    public String uploadShequ(@RequestParam(value = "shequfile", required = false) MultipartFile file, HttpServletRequest request, ModelMap model){
+
+        String path = request.getRealPath("file");
+        File a = new File(path,"test1.xls");
+        try {
+            file.transferTo(a);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        shequService.excelToList(a);
+        return "index";
+    }
+
+
+    @RequestMapping("downloadShequ.form")
+    public ResponseEntity<byte[]> downloadShequ() throws IOException {
+        //String path="D:\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\springMVC\\WEB-INF\\upload\\图片10（定价后）.xlsx";
+        File file= shequService.listToExcel();
+        HttpHeaders headers = new HttpHeaders();
+        String fileName= null;//为了解决中文名称乱码问题
+        try {
+            fileName = new String("社区.xls".getBytes("UTF-8"),"iso-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        headers.setContentDispositionFormData("attachment", fileName);
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),
+                headers, HttpStatus.CREATED);
+
+    }
+
+
 
     //用户模块
 
@@ -165,20 +216,23 @@ public class AdminController {
         return map;
     }
 
-    @ResponseBody
+    @RequestMapping("getUser.form")
+    public String getUser(HttpServletRequest request,@RequestParam(value = "id", required = false) String id){
+        UserEntity user = userService.getUserById(id);
+        request.setAttribute("user",user);
+        return "updateUser";
+    }
+
     @RequestMapping("getAllUser.form")
-    public Map<String, Object> getAllUser(){
-        Map<String, Object> map = new HashMap<String, Object>();
+    public String getAllUser(HttpServletRequest request){
         List<UserEntity> list = null;
         try{
              list = userService.getAllUser();
-           // System.out.println(list);
-            map.put("result",list);
         }catch (Exception e){
             e.printStackTrace();
-            map.put("result","fail");
         }
-        return map;
+        request.setAttribute("list",list);
+        return "allUser";
     }
 
     //街道模块
@@ -251,12 +305,23 @@ public class AdminController {
         }
         return map;
     }
+
+    @RequestMapping("getShengshi.form")
+    public String getShengshi(HttpServletRequest request,@RequestParam(value = "id", required = false)  String id){
+
+        ShengshiEntity shengshi = shengshiService.getById(id);
+        request.setAttribute("shengshi",shengshi);
+
+        return "updateXianqu";
+
+    }
+
     @ResponseBody
     @RequestMapping("delShengshi.form")
-    public Map<String, Object> delShengshi(HttpServletRequest request, ShengshiEntity shengshi){
+    public Map<String, Object> delShengshi(HttpServletRequest request,@RequestParam(value = "id", required = false)  String id){
         Map<String, Object> map = new HashMap<String, Object>();
         try{
-            shengshiService.delShengshi(shengshi);
+            shengshiService.delShengshi(id);
             map.put("result","success");
         }catch (Exception e){
             e.printStackTrace();
@@ -277,19 +342,57 @@ public class AdminController {
         }
         return map;
     }
-    @ResponseBody
+
+
     @RequestMapping("getAllShengshi.form")
-    public Map<String, Object> getAllShengshi(HttpServletRequest request){
-        Map<String, Object> map = new HashMap<String, Object>();
+    public String getAllShengshi(HttpServletRequest request){
+        List<ShengshiEntity> list = null;
         try{
-            List<ShengshiEntity> list = shengshiService.getAllShengshi();
-            map.put("result",list);
+             list = shengshiService.getAllShengshi();
         }catch (Exception e){
             e.printStackTrace();
-            map.put("result","fail");
         }
-        return map;
+        request.setAttribute("list",list);
+        System.out.println("AllShengshi:"+list);
+        return "allxianqu";
     }
+
+
+    @RequestMapping("uploadShengshi.form")
+    public String uploadShengshi(@RequestParam(value = "shengshifile", required = false) MultipartFile file, HttpServletRequest request, ModelMap model){
+       // System.out.println("开始");
+       // System.out.println("file"+file);
+        String path = request.getRealPath("file");
+        //System.out.println(path);
+        File a = new File(path,"test.xls");
+        try {
+            file.transferTo(a);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        shengshiService.excelToList(a);
+        return "index";
+    }
+
+    @RequestMapping("downloadShengshi.form")
+    public ResponseEntity<byte[]> downloadShengshi() throws IOException {
+        //String path="D:\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\springMVC\\WEB-INF\\upload\\图片10（定价后）.xlsx";
+        File file= shengshiService.listToExcel();
+        HttpHeaders headers = new HttpHeaders();
+        String fileName= null;//为了解决中文名称乱码问题
+        try {
+            fileName = new String("省市.xls".getBytes("UTF-8"),"iso-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        headers.setContentDispositionFormData("attachment", fileName);
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),
+                headers, HttpStatus.CREATED);
+
+    }
+
+
 
 
     //Cyry模块

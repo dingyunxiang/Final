@@ -21,4 +21,6 @@ public interface UserService {
 
     public List<UserEntity> getAllUser();
 
+    public UserEntity getUserById(String id);
+
 }

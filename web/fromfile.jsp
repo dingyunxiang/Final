@@ -8,15 +8,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <div id="main">
-    <form action="" class="jNice">
+    <form action="uploadShengshi.form" class="jNice" method="post" enctype="multipart/form-data">
 
-        <h3>fromfile</h3>
+        <h3>从文件导入省市</h3>
         <fieldset>
-            <p><label>用户名：</label><input type="text" id="addUser_username" class="text-long addUser_username" /></p>
-            <p><label>密码：</label><input type="text" id="addUser_password" class="text-long addUser_assword" /></p>
-            <p><label>确认密码：</label><input type="text" id="addUser_repassword" class="text-long addUser_password" /></p>
-            <input id="addUser" type="button" value="确认添加" />
+            <p><label>上传文件</label><input  type="file" name="shengshifile"   class="text-long addUser_username" /></p>
+            <input  type="submit" value="确认添加" />
         </fieldset>
     </form>
+
+    <form action="uploadShequ.form" class="jNice" method="post" enctype="multipart/form-data">
+
+        <h3>从文件导入社区</h3>
+        <fieldset>
+            <p><label>上传文件</label><input  type="file" name="shequfile"   class="text-long addUser_username" /></p>
+            <input  type="submit" value="确认添加" />
+        </fieldset>
+    </form>
+
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>

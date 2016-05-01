@@ -1,9 +1,9 @@
 package test;
 
 import dao.JiedaoDao;
-import entity.JiedaoEntity;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import service.ShequService;
 
 /**
  * Created by dingyunxiang on 16/4/16.
@@ -35,10 +35,11 @@ public class JIedaoDaoTest {
     public static void main(String[] args) {
         BeanFactory factory = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        JiedaoDao service  = (JiedaoDao) factory.getBean("jiedaoDao");
-        JiedaoEntity jiedao = new JiedaoEntity();
-        jiedao.setStreet("1");
-        service.save(jiedao);
+        ShequService service  = (ShequService) factory.getBean("shequService");
+        service.listToExcel();
     }
+
+
+
 
 }

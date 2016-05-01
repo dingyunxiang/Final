@@ -12,11 +12,39 @@
 
         <h3>添加社区</h3>
         <fieldset>
-            <p><label>用户名：</label><input type="text" id="addUser_username" class="text-long addUser_username" /></p>
-            <p><label>密码：</label><input type="text" id="addUser_password" class="text-long addUser_assword" /></p>
-            <p><label>确认密码：</label><input type="text" id="addUser_repassword" class="text-long addUser_password" /></p>
-            <input id="addUser" type="button" value="确认添加" />
+            <p><label>社区名：</label><input type="text" id="addShequ1_community" class="text-long addUser_username" /></p>
+            <input id="addShequ1" type="button" value="确认添加" />
         </fieldset>
     </form>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>
+<script type="text/javascript"  >
+    $("#addShequ1").click(function(){
+        var community = $("#addShequ1_community").val();
+        console.log(community);
+        if(community == ""){
+            $(".addShequ1_community").addClass("error");
+        }else{
+            var data1={
+                community:community,
+            }
+            $.ajax({
+                type : 'POST',
+                dataType:"json",
+                data:data1,
+                url : 'addShequ.form',
+                success : function (data) {
+                    if(data.result == "success"){
+                        alert("添加成功");
+                    }else{
+                        $(".addShequ1_community").addClass("error");
+                    }
+                },
+                error:function(){
+                    console.log("Internet Error!");
+                }
+            });
+        }
+
+    });
+
+</script>

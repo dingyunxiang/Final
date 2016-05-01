@@ -36,7 +36,7 @@ public class CyryEntity {
     private String isenjoybenefit;
     private String isenjoyunemployee;
     private String elsehaha;
-    private Integer monthenjoysalary;
+    private String monthenjoysalary;
     private String ismanageput;
     private String isreceivereemployee;
     private String reemployeeid;
@@ -53,7 +53,7 @@ public class CyryEntity {
     private String locatecounty;
     private String loactecommunity;
 
-    public CyryEntity(String id, String street, String name, String sex, String birth, String card, String ispeo, String worktime, String layofftime, String basicworkunit, String identity, String education, String skill, String unitnature, String skilllevel, String isworking, String monthsalary, String dependent, String post, String iscontract, String contractstarttime, String constractendtime, String engageproject, String engageplace, String ishavinglicense, String workinputplace, String job, String freejobtype, String health, String isenjoybenefit, String isenjoyunemployee, String elsehaha, Integer monthenjoysalary, String ismanageput, String isreceivereemployee, String reemployeeid, String isenjoyloan, String loannumber, String whichtrain, String whichtrain1, String whichtrain2, String jobwanting, String manpowermacket, String isotherprovice, String phone, String contactman, String locatecounty, String loactecommunity) {
+    public CyryEntity(String id, String street, String name, String sex, String birth, String card, String ispeo, String worktime, String layofftime, String basicworkunit, String identity, String education, String skill, String unitnature, String skilllevel, String isworking, String monthsalary, String dependent, String post, String iscontract, String contractstarttime, String constractendtime, String engageproject, String engageplace, String ishavinglicense, String workinputplace, String job, String freejobtype, String health, String isenjoybenefit, String isenjoyunemployee, String elsehaha, String monthenjoysalary, String ismanageput, String isreceivereemployee, String reemployeeid, String isenjoyloan, String loannumber, String whichtrain, String whichtrain1, String whichtrain2, String jobwanting, String manpowermacket, String isotherprovice, String phone, String contactman, String locatecounty, String loactecommunity) {
         this.id = id;
         this.street = street;
         this.name = name;
@@ -363,11 +363,11 @@ public class CyryEntity {
         this.elsehaha = elsehaha;
     }
 
-    public Integer getMonthenjoysalary() {
+    public String getMonthenjoysalary() {
         return monthenjoysalary;
     }
 
-    public void setMonthenjoysalary(Integer monthenjoysalary) {
+    public void setMonthenjoysalary(String monthenjoysalary) {
         this.monthenjoysalary = monthenjoysalary;
     }
 

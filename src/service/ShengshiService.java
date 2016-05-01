@@ -3,6 +3,7 @@ package service;
 import entity.ShengshiEntity;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -14,11 +15,17 @@ public interface ShengshiService {
     public void addShengshi(ShengshiEntity shengshi);
 
 
-    public void delShengshi(ShengshiEntity shengshi);
+    public void delShengshi(String id);
 
     public void updateShengshi(ShengshiEntity shengshi);
 
     public List<ShengshiEntity> getAllShengshi();
+
+    public File listToExcel();
+
+    public String excelToList(File file);
+
+    public ShengshiEntity getById(String id);
 
 
 }

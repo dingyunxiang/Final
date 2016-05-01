@@ -41,8 +41,6 @@
         		<div id="sidebar">
                         <ul class="sideNav">
                             <li><a href="getAllUser.form" id="allUser" class="user">用户总览</a></li>
-                            <li><a href="#"  id="del" class="user">用户删除</a></li>
-                            <li><a href="#"  class="user">用户修改</a></li>
                             <li><a href="#" id="add" class="user">添加新用户</a></li>
                         </ul>
                         <!-- // .sideNav -->
@@ -104,7 +102,8 @@
                 <div class="clear"></div>
             </div>
             <!-- // #container -->
-        <<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>/div>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>
+    </div>
         <!-- // #containerHolder -->
         
         <p id="footer">Feel free to use and customize it. <a href="http://www.perspectived.com">Credit is appreciated.</a></p>

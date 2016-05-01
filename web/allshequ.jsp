@@ -1,5 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div id="main">
 
     <h3>所有社区</h3>
@@ -9,13 +11,60 @@
             <th>用户名</th>
             <th>密码</th>
         </tr>
-        <c:forEach items="${users}" var="user">
+        <c:forEach items="${list}" var="ele" begin="0">
             <tr>
-                <td>1</td>
-                <td>${ele.username}</td>
-                <td>${ele.password}</td>
-                <td class="action"><a href="#" class="view">View</a><a href="#" class="edit">Edit</a><a href="#" class="delete">Delete</a></td>
+                <td></td>
+                <td>${index}</td>
+                <td>${ele.community}</td>
+                <td class="action"><a  href="#" class="view" shu="${ele.id}">View</a><a shu="${ele.id}" href="#" class="edit">Edit</a><a shu="${ele.id}" href="#" class="delete">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
 </div>
+
+
+<script type="text/javascript">
+    $(".delete").click(function(){
+        var id = $(this).attr("shu");
+        console.log(id);
+        var data1 = {
+            id: id
+        }
+        $.ajax({
+            type : 'POST',
+            dataType:"json",
+            data:data1,
+            url : 'delShequ.form',
+            success : function (data) {
+                if(data.result == "success"){
+                    $("#main").load('getAllShequ.form');
+                }else{
+                   alert("删除失败");
+                }
+            },
+            error:function(){
+                console.log("Internet Error!");
+            }
+        });
+    });
+
+    $(".view").click(function(){
+        var id = $(this).attr("shu");
+       // console.log(id);
+        var data1 = {
+            id: id
+        }
+       // $("#main").load('getShequ.form',data1);
+
+    });
+
+    $(".edit").click(function(){
+        var id = $(this).attr("shu");
+       // console.log(id);
+        var data1 = {
+            id: id
+        }
+        $("#main").load('getShequ.form',data1);
+    });
+
+</script>
