@@ -12,11 +12,7 @@
 
         <h3>printall</h3>
         <fieldset>
-            <p><label>用户名：</label><input type="text" id="addUser_username" class="text-long addUser_username" /></p>
-            <p><label>密码：</label><input type="text" id="addUser_password" class="text-long addUser_assword" /></p>
-            <p><label>确认密码：</label><input type="text" id="addUser_repassword" class="text-long addUser_password" /></p>
-            <input id="addUser" type="button" value="确认添加" />
+           <a href="downloadAllShuju.form" ><input id="addUser" type="button" value="确认添加" /></a>
         </fieldset>
     </form>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main/main.js"></script>

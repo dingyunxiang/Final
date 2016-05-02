@@ -12,8 +12,8 @@
 
         <h3>复合删除</h3>
         <fieldset>
-            <p><label>按社区删除</label><input type="text" id="addUser_username" class="text-long addUser_username" /></p>
-            <input id="addUser" type="button" value="确认添加" />
+            <p><label>按社区删除</label><input type="text" id="shequname" class="text-long" /></p>
+            <input id="delByShequ" type="button" value="确认删除" />
         </fieldset>
 
         <input id="delAll" value="删除全部数据" type="button">
@@ -21,7 +21,30 @@
 </div>
 
 <script type="text/javascript">
-
+    $("#delByShequ").click(function(){
+        var id = $("#shequname").val();
+        var data1={
+            id:id
+        }
+        console.log(data1);
+        $.ajax({
+            type : 'POST',
+            dataType:"json",
+            data:data1,
+            url : 'delShujuByShequ.form',
+            success : function (data) {
+                if(data.result == "success"){
+                    alert("删除成功");
+                }else{
+                    //$(".addShequ1_community").addClass("error");
+                    console.log("删除失败");
+                }
+            },
+            error:function(){
+                console.log("Internet Error!");
+            }
+        });
+    });
 
 
 </script>

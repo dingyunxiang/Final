@@ -11,7 +11,7 @@
     <script type="text/javascript">
 
         $("#addshuju").click(function(){
-            $("#main").load("addshuju.jsp");
+            $("#main").load("addShuju.form");
             $(".yewu").removeClass("active");
             $(this).addClass("active");
             return false;
@@ -23,7 +23,7 @@
             return false;
         });
         $("#allshuju").click(function(){
-            $("#main").load("allshuju.jsp");
+            $("#main").load("getAllCyry.form");
             $(".yewu").removeClass("active");
             $(this).addClass("active");
             return false;

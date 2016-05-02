@@ -32,7 +32,7 @@
         	<li><a id ="data" href="#" class="press">数据维护</a></li>
         	<li><a id="yewu" href="#" class="press">业务办理</a></li>
         	<li><a id="baobiao" href="#" class="press">报表查询</a></li>
-        	<li class="logout"><a href="#">注销</a></li>
+        	<li class="logout"><a href="logout.form">注销</a></li>
         </ul>
         <!-- // #end mainNav -->
         

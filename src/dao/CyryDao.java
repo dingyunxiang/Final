@@ -7,5 +7,5 @@ import entity.CyryEntity;
  */
 public interface CyryDao extends BaseDao<CyryEntity> {
 
-
+    public String delCyryByShequ(String shequ);
 }

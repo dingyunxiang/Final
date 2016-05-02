@@ -10,145 +10,145 @@
             <generator class="uuid.hex" />
         </id>
         <property name="street">
-            <column name="street" sql-type="varchar(255)" not-null="true"/>
+            <column name="street" sql-type="varchar(255)"  />
         </property>
         <property name="name">
-            <column name="name" sql-type="varchar(255)" not-null="true"/>
+            <column name="name" sql-type="varchar(255)"  />
         </property>
         <property name="sex">
-            <column name="sex" sql-type="varchar(255)" not-null="true"/>
+            <column name="sex" sql-type="varchar(255)"  />
         </property>
         <property name="birth">
-            <column name="birth" sql-type="varchar(255)" not-null="true"/>
+            <column name="birth" sql-type="varchar(255)"  />
         </property>
         <property name="card">
-            <column name="card" sql-type="varchar(255)" not-null="true"/>
+            <column name="card" sql-type="varchar(255)"  />
         </property>
         <property name="ispeo">
-            <column name="ispeo" sql-type="varchar(255)" not-null="true"/>
+            <column name="ispeo" sql-type="varchar(255)"  />
         </property>
         <property name="worktime">
-            <column name="worktime" sql-type="varchar(255)" not-null="true"/>
+            <column name="worktime" sql-type="varchar(255)"  />
         </property>
         <property name="layofftime">
-            <column name="layofftime" sql-type="varchar(255)" not-null="true"/>
+            <column name="layofftime" sql-type="varchar(255)"  />
         </property>
         <property name="basicworkunit">
-            <column name="basicworkunit" sql-type="varchar(255)" not-null="true"/>
+            <column name="basicworkunit" sql-type="varchar(255)"  />
         </property>
         <property name="identity">
-            <column name="identity" sql-type="varchar(255)" not-null="true"/>
+            <column name="identity" sql-type="varchar(255)"  />
         </property>
         <property name="education">
-            <column name="education" sql-type="varchar(255)" not-null="true"/>
+            <column name="education" sql-type="varchar(255)"  />
         </property>
         <property name="skill">
-            <column name="skill" sql-type="varchar(255)" not-null="true"/>
+            <column name="skill" sql-type="varchar(255)"  />
         </property>
         <property name="unitnature">
-            <column name="unitnature" sql-type="varchar(255)" not-null="true"/>
+            <column name="unitnature" sql-type="varchar(255)"  />
         </property>
         <property name="skilllevel">
-            <column name="skilllevel" sql-type="varchar(255)" not-null="true"/>
+            <column name="skilllevel" sql-type="varchar(255)"  />
         </property>
         <property name="isworking">
-            <column name="isworking" sql-type="varchar(255)" not-null="true"/>
+            <column name="isworking" sql-type="varchar(255)"  />
         </property>
         <property name="monthsalary">
-            <column name="monthsalary" sql-type="varchar(255)" not-null="true"/>
+            <column name="monthsalary" sql-type="varchar(255)"  />
         </property>
         <property name="dependent">
-            <column name="dependent" sql-type="varchar(255)" not-null="true"/>
+            <column name="dependent" sql-type="varchar(255)"  />
         </property>
         <property name="post">
-            <column name="post" sql-type="varchar(255)" not-null="true"/>
+            <column name="post" sql-type="varchar(255)"  />
         </property>
         <property name="iscontract">
-            <column name="iscontract" sql-type="varchar(255)" not-null="true"/>
+            <column name="iscontract" sql-type="varchar(255)"  />
         </property>
         <property name="contractstarttime">
-            <column name="contractstarttime" sql-type="varchar(255)" not-null="true"/>
+            <column name="contractstarttime" sql-type="varchar(255)"  />
         </property>
         <property name="constractendtime">
-            <column name="constractendtime" sql-type="varchar(255)" not-null="true"/>
+            <column name="constractendtime" sql-type="varchar(255)"  />
         </property>
         <property name="engageproject">
-            <column name="engageproject" sql-type="varchar(255)" not-null="true"/>
+            <column name="engageproject" sql-type="varchar(255)"  />
         </property>
         <property name="engageplace">
-            <column name="engageplace" sql-type="varchar(255)" not-null="true"/>
+            <column name="engageplace" sql-type="varchar(255)"  />
         </property>
         <property name="ishavinglicense">
-            <column name="ishavinglicense" sql-type="varchar(255)" not-null="true"/>
+            <column name="ishavinglicense" sql-type="varchar(255)"  />
         </property>
         <property name="workinputplace">
-            <column name="workinputplace" sql-type="varchar(255)" not-null="true"/>
+            <column name="workinputplace" sql-type="varchar(255)"  />
         </property>
         <property name="job">
-            <column name="job" sql-type="varchar(255)" not-null="true"/>
+            <column name="job" sql-type="varchar(255)"  />
         </property>
         <property name="freejobtype">
-            <column name="freejobtype" sql-type="varchar(255)" not-null="true"/>
+            <column name="freejobtype" sql-type="varchar(255)"  />
         </property>
         <property name="health">
-            <column name="health" sql-type="varchar(255)" not-null="true"/>
+            <column name="health" sql-type="varchar(255)"  />
         </property>
         <property name="isenjoybenefit">
-            <column name="isenjoybenefit" sql-type="varchar(255)" not-null="true"/>
+            <column name="isenjoybenefit" sql-type="varchar(255)"  />
         </property>
         <property name="isenjoyunemployee">
-            <column name="isenjoyunemployee" sql-type="varchar(255)" not-null="true"/>
+            <column name="isenjoyunemployee" sql-type="varchar(255)"  />
         </property>
         <property name="elsehaha">
-            <column name="elsehaha" sql-type="varchar(255)" not-null="true"/>
+            <column name="elsehaha" sql-type="varchar(255)"  />
         </property>
         <property name="monthenjoysalary">
-            <column name="monthenjoysalary" sql-type="decimal(10)" precision="10" not-null="true"/>
+            <column name="monthenjoysalary" sql-type="varchar(255)" precision="10"  />
         </property>
         <property name="ismanageput">
-            <column name="ismanageput" sql-type="varchar(255)" not-null="true"/>
+            <column name="ismanageput" sql-type="varchar(255)"  />
         </property>
         <property name="isreceivereemployee">
-            <column name="isreceivereemployee" sql-type="varchar(255)" not-null="true"/>
+            <column name="isreceivereemployee" sql-type="varchar(255)"  />
         </property>
         <property name="reemployeeid">
-            <column name="reemployeeid" sql-type="varchar(255)" not-null="true"/>
+            <column name="reemployeeid" sql-type="varchar(255)"  />
         </property>
         <property name="isenjoyloan">
-            <column name="isenjoyloan" sql-type="varchar(255)" not-null="true"/>
+            <column name="isenjoyloan" sql-type="varchar(255)"  />
         </property>
         <property name="loannumber">
-            <column name="loannumber" sql-type="varchar(255)" not-null="true"/>
+            <column name="loannumber" sql-type="varchar(255)"  />
         </property>
         <property name="whichtrain">
-            <column name="whichtrain" sql-type="varchar(255)" not-null="true"/>
+            <column name="whichtrain" sql-type="varchar(255)"  />
         </property>
         <property name="whichtrain1">
-            <column name="whichtrain1" sql-type="varchar(255)" not-null="true"/>
+            <column name="whichtrain1" sql-type="varchar(255)"  />
         </property>
         <property name="whichtrain2">
-            <column name="whichtrain2" sql-type="varchar(255)" not-null="true"/>
+            <column name="whichtrain2" sql-type="varchar(255)"  />
         </property>
         <property name="jobwanting">
-            <column name="jobwanting" sql-type="varchar(255)" not-null="true"/>
+            <column name="jobwanting" sql-type="varchar(255)"  />
         </property>
         <property name="manpowermacket">
-            <column name="manpowermacket" sql-type="varchar(255)" not-null="true"/>
+            <column name="manpowermacket" sql-type="varchar(255)"  />
         </property>
         <property name="isotherprovice">
-            <column name="isotherprovice" sql-type="varchar(255)" not-null="true"/>
+            <column name="isotherprovice" sql-type="varchar(255)"  />
         </property>
         <property name="phone">
-            <column name="phone" sql-type="varchar(255)" not-null="true"/>
+            <column name="phone" sql-type="varchar(255)"  />
         </property>
         <property name="contactman">
-            <column name="contactman" sql-type="varchar(255)" not-null="true"/>
+            <column name="contactman" sql-type="varchar(255)"  />
         </property>
         <property name="locatecounty">
-            <column name="locatecounty" sql-type="varchar(255)" not-null="true"/>
+            <column name="locatecounty" sql-type="varchar(255)"  />
         </property>
         <property name="loactecommunity">
-            <column name="loactecommunity" sql-type="varchar(255)" not-null="true"/>
+            <column name="loactecommunity" sql-type="varchar(255)"  />
         </property>
     </class>
 </hibernate-mapping>

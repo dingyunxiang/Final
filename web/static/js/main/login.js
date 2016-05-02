@@ -19,7 +19,7 @@ $(function () {
                 url : 'login.form',
                 success : function (data) {
                     if(data.result == "success"){
-                        location.href="index.jsp";
+                        location.href="index.form";
                     }else{
                         $(".text").addClass("error");
                     }

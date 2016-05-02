@@ -1,7 +1,8 @@
 package daoImpl;
 
+import dao.CyryDao;
 import entity.CyryEntity;
-import dao.*;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,5 +13,12 @@ import org.springframework.stereotype.Repository;
 @Repository("cyryDao")
 public class CyryDaoImpl extends BaseDaoImpl<CyryEntity> implements CyryDao{
 
+    @Override
+    public String delCyryByShequ(String shequ) {
 
+        String sql = "delete from CyryEntity c where c.loactecommunity = '"+shequ+"'";
+        Query query = this.getSession().createQuery(sql);
+        int rs = query.executeUpdate();
+        return "Success";
+    }
 }

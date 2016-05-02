@@ -8,9 +8,9 @@
     <h3>所有县区</h3>
     <table cellpadding="0" cellspacing="0">
         <tr>
-            <th>序号</th>
-            <th>用户名</th>
-            <th>密码</th>
+            <td>序号</td>
+            <td>用户名</td>
+            <td>密码</td>
         </tr>
         <c:forEach items="${list}" var="ele">
             <tr>

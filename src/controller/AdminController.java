@@ -46,13 +46,17 @@ public class AdminController {
     @Autowired
     private CyryService cyryService;
 
+    @RequestMapping(value="index.form")
+    public String index(HttpServletRequest request ){
+        return "index";
+    }
 
 
 
-
-    @RequestMapping(value="jiedaoAdd.form")
+    @RequestMapping(value="logout.form")
     public String jiedao(HttpServletRequest request, JiedaoEntity jiedao){
-        return "admin/admin";
+        request.getSession().setAttribute("user",null);
+        return "login";
     }
 
 
@@ -62,7 +66,7 @@ public class AdminController {
     public Map<String, Object> login(HttpServletRequest request,  UserEntity user){
         Map<String, Object> modelMap = new HashMap<String, Object>();
         if(userService.login(user)) {
-            request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("user",user.getUsername());
             modelMap.put("result","success");
             return modelMap;
         }
@@ -393,13 +397,12 @@ public class AdminController {
     }
 
 
-
-
     //Cyry模块
 
     @ResponseBody
     @RequestMapping("addCyry.form")
     public Map<String, Object> addCyry(HttpServletRequest request, CyryEntity cyry){
+        System.out.println(cyry);
         Map<String, Object> map = new HashMap<String, Object>();
         try{
            cyryService.addCyry(cyry);
@@ -412,10 +415,10 @@ public class AdminController {
     }
     @ResponseBody
     @RequestMapping("delCyry.form")
-    public Map<String, Object> delCyry(HttpServletRequest request, CyryEntity cyry){
+    public Map<String, Object> delCyry(HttpServletRequest request, @RequestParam(value = "id", required = false)String id){
         Map<String, Object> map = new HashMap<String, Object>();
         try{
-            cyryService.delCyry(cyry);
+            cyryService.delCyry(id);
             map.put("result","success");
         }catch (Exception e){
             e.printStackTrace();
@@ -423,6 +426,11 @@ public class AdminController {
         }
         return map;
     }
+
+
+
+
+
     @ResponseBody
     @RequestMapping("updateCyry.form")
     public Map<String, Object> updateCyry(HttpServletRequest request,CyryEntity cyry){
@@ -436,19 +444,91 @@ public class AdminController {
         }
         return map;
     }
-    @ResponseBody
     @RequestMapping("getAllCyry.form")
-    public Map<String, Object> getAllCyry(HttpServletRequest request){
-        Map<String, Object> map = new HashMap<String, Object>();
+    public String getAllCyry(HttpServletRequest request){
         try{
             List<CyryEntity> list = cyryService.getAllCyry();
-            map.put("result",list);
+            request.setAttribute("list",list);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "allshuju";
+    }
+
+    @RequestMapping("delShujuByShequ.form")
+    @ResponseBody
+    public Map<String, Object> delCyryByShequ(HttpServletRequest request, @RequestParam(value = "id", required = false)String shequ){
+        Map<String, Object> map = new HashMap<String, Object>();
+        try{
+            cyryService.delShejuByShequ(shequ);
+            map.put("result","success");
         }catch (Exception e){
             e.printStackTrace();
             map.put("result","fail");
         }
         return map;
     }
+
+    @RequestMapping("getShuju.form")
+    public String getShuju(HttpServletRequest request,@RequestParam(value = "id", required = false)  String id){
+        System.out.println("id"+id);
+       CyryEntity cyry = cyryService.getCyryById(id);
+        System.out.println("cyry"+cyry.getId());
+        request.setAttribute("cyry",cyry);
+        List<ShengshiEntity> shengshi = shengshiService.getAllShengshi();
+        List<ShequEntity> shequ = shequService.getAll();
+        request.setAttribute("shengshi",shengshi);
+        request.setAttribute("shequ",shequ);
+        return "updateShuju1";
+
+    }
+
+    @RequestMapping("downloadAllShuju.form")
+    public ResponseEntity<byte[]> downloadAllShuju() throws IOException {
+        //String path="D:\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\springMVC\\WEB-INF\\upload\\图片10（定价后）.xlsx";
+        File file= cyryService.listToExcel();
+        HttpHeaders headers = new HttpHeaders();
+        String fileName= null;//为了解决中文名称乱码问题
+        try {
+            fileName = new String("数据.xls".getBytes("UTF-8"),"iso-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        headers.setContentDispositionFormData("attachment", fileName);
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),
+                headers, HttpStatus.CREATED);
+
+    }
+
+    @RequestMapping("downloadShujuByDiy.form")
+    public ResponseEntity<byte[]> downloadShujuByDiy(@RequestParam(value = "array1", required = false)String []array) throws IOException {
+        System.out.println("succ"+array[0]);
+        //String path="D:\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\springMVC\\WEB-INF\\upload\\图片10（定价后）.xlsx";
+        File file= cyryService.listToExcelByDiy(array);
+        HttpHeaders headers = new HttpHeaders();
+        String fileName= null;//为了解决中文名称乱码问题
+        try {
+            fileName = new String("自定义数据.xls".getBytes("UTF-8"),"iso-8859-1");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        headers.setContentDispositionFormData("attachment", fileName);
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),
+                headers, HttpStatus.CREATED);
+
+    }
+
+    @RequestMapping("addShuju.form")
+    public String addShuju(HttpServletRequest request){
+        List<ShengshiEntity> shengshi = shengshiService.getAllShengshi();
+        List<ShequEntity> shequ = shequService.getAll();
+        request.setAttribute("shengshi",shengshi);
+        request.setAttribute("shequ",shequ);
+       return "addshuju";
+    }
+
 
 
 
