@@ -9,12 +9,12 @@
     <table cellpadding="0" cellspacing="0">
         <tr>
             <td>序号</td>
-            <td>用户名</td>
-            <td>密码</td>
+            <td>省市名称</td>
+            <td></td>
         </tr>
-        <c:forEach items="${list}" var="ele">
+        <c:forEach items="${list}" var="ele" varStatus="index">
             <tr>
-                <td>1</td>
+                <td>${index.count}</td>
                 <td>${ele.county}</td>
                 <td class="action"><a href="#" shu="${ele.id}" class="view">View</a><a href="#" shu="${ele.id}" class="edit">Edit</a><a href="#" shu="${ele.id}" class="delete">Delete</a></td>
             </tr>

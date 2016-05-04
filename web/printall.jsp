@@ -10,7 +10,7 @@
 <div id="main">
     <form action="" class="jNice">
 
-        <h3>printall</h3>
+        <h3>下载所有录入数据</h3>
         <fieldset>
            <a href="downloadAllShuju.form" ><input id="addUser" type="button" value="确认添加" /></a>
         </fieldset>

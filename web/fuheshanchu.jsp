@@ -16,7 +16,7 @@
             <input id="delByShequ" type="button" value="确认删除" />
         </fieldset>
 
-        <input id="delAll" value="删除全部数据" type="button">
+        <%--<input id="delAll" value="删除全部数据" type="button">--%>
     </form>
 </div>
 

@@ -20,10 +20,11 @@
                 <td>序号</td>
                 <td>用户名</td>
                 <td>密码</td>
+                <td></td>
             </tr>
-             <c:forEach items="${list}" var="user">
+             <c:forEach items="${list}" var="user" varStatus="index">
                 <tr>
-                    <td>1</td>
+                    <td>${index.count}</td>
                     <td>${user.username}</td>
                     <td>${user.password}</td>
                     <td class="action"><a href="#" class="view" shu="${user.id}">View</a><a href="#" shu="${user.id}" class="edit">Edit</a><a href="#"shu="${user.id}" class="delete">Delete</a></td>

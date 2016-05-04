@@ -10,10 +10,11 @@
             <td>姓名</td>
             <td>性别</td>
             <td>电话</td>
+            <td></td>
         </tr>
-        <c:forEach items="${list}" var="shuju">
+        <c:forEach items="${list}" var="shuju" varStatus="xh">
             <tr>
-                <td>1</td>
+                <td>${xh.count}</td>
                 <td>${shuju.name}</td>
                 <td>${shuju.sex}</td>
                 <td>${shuju.phone}</td>

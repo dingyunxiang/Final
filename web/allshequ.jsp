@@ -8,13 +8,12 @@
     <table cellpadding="0" cellspacing="0">
         <tr>
             <td>序号</td>
-            <td>用户名</td>
-            <td>密码</td>
+            <td>社区名</td>
+            <td></td>
         </tr>
-        <c:forEach items="${list}" var="ele" begin="0">
+        <c:forEach items="${list}" var="ele" varStatus="index">
             <tr>
-                <td></td>
-                <td>${index}</td>
+                <td>${index.count}</td>
                 <td>${ele.community}</td>
                 <td class="action"><a  href="#" class="view" shu="${ele.id}">View</a><a shu="${ele.id}" href="#" class="edit">Edit</a><a shu="${ele.id}" href="#" class="delete">Delete</a></td>
             </tr>

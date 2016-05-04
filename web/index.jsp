@@ -106,9 +106,12 @@
     </div>
         <!-- // #containerHolder -->
         
-        <p id="footer">Feel free to use and customize it. <a href="http://www.perspectived.com">Credit is appreciated.</a></p>
+        <p id="footer">Welcome to use it,Designed by LY.</p>
     </div>
     <script>
+        $("#sidebar").load("yewu.jsp");
+        $("#main").load("addshuju.jsp");
+
         $("#data").click(function(){
             $("#sidebar").load("data.jsp");
             $(".press").removeClass("active");
